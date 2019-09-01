@@ -24,6 +24,11 @@
     * may need to do 'gem install bundler'
 * foreman start -f Procfile.dev
     * may need to do 'npm install -g foreman'
+    * if this fails with the error ```/bin/sh: react-scripts: command not found```, may need to:
+    ```bash
+     cd offline_client 
+     yarn
+    ```
 * http://localhost:3100
     * 	Look for Online Yay!!!
 
