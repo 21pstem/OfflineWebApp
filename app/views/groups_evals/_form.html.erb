@@ -1,0 +1,127 @@
+<%= form_with(model: groups_eval, local: true) do |form| %>
+  <% if groups_eval.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(groups_eval.errors.count, "error") %> prohibited this groups_eval from being saved:</h2>
+
+      <ul>
+      <% groups_eval.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :year_id %>
+    <%= form.number_field :year_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :semester %>
+    <%= form.text_field :semester %>
+  </div>
+
+  <div class="field">
+    <%= form.label :school_id %>
+    <%= form.number_field :school_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :grade %>
+    <%= form.text_field :grade %>
+  </div>
+
+  <div class="field">
+    <%= form.label :group_id %>
+    <%= form.number_field :group_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :evaluator_user_id %>
+    <%= form.number_field :evaluator_user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :evaluator_group_user_id %>
+    <%= form.number_field :evaluator_group_user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :portf_plan_rating %>
+    <%= form.text_field :portf_plan_rating %>
+  </div>
+
+  <div class="field">
+    <%= form.label :portf_analysis_rating %>
+    <%= form.text_field :portf_analysis_rating %>
+  </div>
+
+  <div class="field">
+    <%= form.label :proto_title_rating %>
+    <%= form.text_field :proto_title_rating %>
+  </div>
+
+  <div class="field">
+    <%= form.label :proto_rating %>
+    <%= form.text_field :proto_rating %>
+  </div>
+
+  <div class="field">
+    <%= form.label :poster_abstract_rating %>
+    <%= form.text_field :poster_abstract_rating %>
+  </div>
+
+  <div class="field">
+    <%= form.label :poster_intro_abstr_rating %>
+    <%= form.text_field :poster_intro_abstr_rating %>
+  </div>
+
+  <div class="field">
+    <%= form.label :poster_mat_meth_rating %>
+    <%= form.text_field :poster_mat_meth_rating %>
+  </div>
+
+  <div class="field">
+    <%= form.label :poster_results_rating %>
+    <%= form.text_field :poster_results_rating %>
+  </div>
+
+  <div class="field">
+    <%= form.label :poster_discussion_rating %>
+    <%= form.text_field :poster_discussion_rating %>
+  </div>
+
+  <div class="field">
+    <%= form.label :poster_citation_rating %>
+    <%= form.text_field :poster_citation_rating %>
+  </div>
+
+  <div class="field">
+    <%= form.label :poster_design_rating %>
+    <%= form.text_field :poster_design_rating %>
+  </div>
+
+  <div class="field">
+    <%= form.label :poster_summary_comments %>
+    <%= form.text_field :poster_summary_comments %>
+  </div>
+
+  <div class="field">
+    <%= form.label :invalid %>
+    <%= form.check_box :invalid %>
+  </div>
+
+  <div class="field">
+    <%= form.label :created_at %>
+    <%= form.datetime_select :created_at %>
+  </div>
+
+  <div class="field">
+    <%= form.label :updated_at %>
+    <%= form.datetime_select :updated_at %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
