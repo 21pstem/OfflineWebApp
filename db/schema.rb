@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_03_235327) do
+ActiveRecord::Schema.define(version: 2019_09_05_234434) do
 
   create_table "groups_evals", force: :cascade do |t|
     t.integer "year_id", null: false
@@ -19,10 +19,10 @@ ActiveRecord::Schema.define(version: 2019_09_03_235327) do
     t.string "grade", default: "", null: false
     t.integer "group_id"
     t.integer "evaluator_user_id", null: false
-    t.integer "evaluator_groups_user_id", null: false
+    t.integer "evaluator_group_user_id", null: false
     t.string "portf_plan_rating"
     t.string "portf_analysis_rating"
-    t.string "proto_title_rating"
+    t.string "proto_title"
     t.string "proto_rating"
     t.string "poster_abstract_rating"
     t.string "poster_intro_abstr_rating"
@@ -32,9 +32,10 @@ ActiveRecord::Schema.define(version: 2019_09_03_235327) do
     t.string "poster_citation_rating"
     t.string "poster_design_rating"
     t.string "poster_summary_comments"
-    t.boolean "invalid", default: false, null: false
+    t.boolean "rejected", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "active", default: true, null: false
   end
 
   create_table "groups_users", force: :cascade do |t|
@@ -44,9 +45,10 @@ ActiveRecord::Schema.define(version: 2019_09_03_235327) do
     t.string "grade", default: "", null: false
     t.integer "group_id", null: false
     t.integer "user_id", null: false
-    t.string "user_role", default: "", null: false
+    t.string "user_roles", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "active", default: true, null: false
   end
 
 end
