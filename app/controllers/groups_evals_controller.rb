@@ -24,7 +24,9 @@ class GroupsEvalsController < ApplicationController
   # POST /groups_evals
   # POST /groups_evals.json
   def create
+    puts "groups_eval_params: #{groups_eval_params.inspect}"
     @groups_eval = GroupsEval.new(groups_eval_params)
+    puts "@groups_eval: #{@groups_eval.inspect}"
 
     respond_to do |format|
       if @groups_eval.save

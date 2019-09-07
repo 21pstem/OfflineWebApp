@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+const API = ''; //'http://localhost:3000';
+
 export class ShowHome extends Component {
   constructor(props) {
     super(props);
@@ -13,14 +15,15 @@ export class ShowHome extends Component {
   }
   componentDidMount() {
     this.setState({ isLoading: true });
-
-    fetch('/home/index')
+    //, {mode: 'no-cors'})
+    fetch(API + '/home/index')
       //.then(response => response.json())
       .then(resp => {
         if (resp.ok) {
           return resp.json();
         } else {
           throw new Error("response from 3000 not ok");
+          // return resp.json();
         }
       })
       .then(data => {
@@ -44,6 +47,7 @@ export class ShowHome extends Component {
     if (isLoading) {
       return <p>Loading ...</p>;
     } else if (!!error) {
+      console.log(error)
       return (
         <div>
           <p>Error :(</p>

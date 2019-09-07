@@ -10,7 +10,7 @@ one:
   evaluator_group_user_id: 1
   portf_plan_rating: MyString
   portf_analysis_rating: MyString
-  proto_title_rating: MyString
+  proto_title: MyString
   proto_rating: MyString
   poster_abstract_rating: MyString
   poster_intro_abstr_rating: MyString
@@ -20,7 +20,7 @@ one:
   poster_citation_rating: MyString
   poster_design_rating: MyString
   poster_summary_comments: MyString
-  invalid: false
+  rejected: false
   created_at: 2019-09-05 00:25:20
   updated_at: 2019-09-05 00:25:20
 
@@ -34,7 +34,7 @@ two:
   evaluator_group_user_id: 1
   portf_plan_rating: MyString
   portf_analysis_rating: MyString
-  proto_title_rating: MyString
+  proto_title: MyString
   proto_rating: MyString
   poster_abstract_rating: MyString
   poster_intro_abstr_rating: MyString
@@ -44,6 +44,6 @@ two:
   poster_citation_rating: MyString
   poster_design_rating: MyString
   poster_summary_comments: MyString
-  invalid: false
+  rejected: false
   created_at: 2019-09-05 00:25:20
   updated_at: 2019-09-05 00:25:20
