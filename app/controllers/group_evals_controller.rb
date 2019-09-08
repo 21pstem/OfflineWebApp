@@ -30,6 +30,7 @@ class GroupEvalsController < ApplicationController
   # POST /group_evals
   # POST /group_evals.json
   def create
+    make_evaluator
     @group_eval = GroupEval.new(group_eval_params)
 
     respond_to do |format|
@@ -46,6 +47,7 @@ class GroupEvalsController < ApplicationController
   # PATCH/PUT /group_evals/1
   # PATCH/PUT /group_evals/1.json
   def update
+    make_evaluator
     respond_to do |format|
       if @group_eval.update(group_eval_params)
         format.html { redirect_to @group_eval, notice: 'Groups eval was successfully updated.' }
@@ -71,6 +73,13 @@ class GroupEvalsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_group_eval
       @group_eval = GroupEval.find(params[:id])
+    end
+
+    def make_evaluator
+      if GroupsUser.find_by(id: group_eval_params[:evaluator_group_user_id]) == nil
+        #how should we handle the fact that :group_id is required for groups_user, but not for group_eval?
+        [GroupsUser.create(id: group_eval_params[:evaluator_group_user_id], group_id: group_eval_params[:group_id], user_id: group_eval_params[:evaluator_user_id])]
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
