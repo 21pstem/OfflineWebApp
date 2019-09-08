@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
- resources :groups_evals do
+ resources :groups_users do
+   collection do
+     get 'by_evaluator/:id', to: 'groups_users#by_evaluator', as: 'by_evaluator'
+   end
+ end
+ resources :group_evals do
     collection do
-    	get 'by_evaluator/:id', to: 'groups_evals#by_evaluator', as: 'by_evaluator'
+    	get 'by_evaluator/:id', to: 'group_evals#by_evaluator', as: 'by_evaluator'
     end
   end
   get 'home/index'

@@ -12,17 +12,17 @@
 
 ActiveRecord::Schema.define(version: 2019_09_03_235327) do
 
-  create_table "groups_evals", force: :cascade do |t|
+  create_table "group_evals", force: :cascade do |t|
     t.integer "year_id", null: false
     t.string "semester", default: "", null: false
     t.integer "school_id"
     t.string "grade", default: "", null: false
     t.integer "group_id"
     t.integer "evaluator_user_id", null: false
-    t.integer "evaluator_groups_user_id", null: false
+    t.integer "evaluator_group_user_id", null: false
     t.string "portf_plan_rating"
     t.string "portf_analysis_rating"
-    t.string "proto_title_rating"
+    t.string "proto_title"
     t.string "proto_rating"
     t.string "poster_abstract_rating"
     t.string "poster_intro_abstr_rating"

@@ -1,10 +1,10 @@
-<%= form_with(model: groups_eval, local: true) do |form| %>
-  <% if groups_eval.errors.any? %>
+<%= form_with(model: group_eval, local: true) do |form| %>
+  <% if group_eval.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(groups_eval.errors.count, "error") %> prohibited this groups_eval from being saved:</h2>
+      <h2><%= pluralize(group_eval.errors.count, "error") %> prohibited this group_eval from being saved:</h2>
 
       <ul>
-      <% groups_eval.errors.full_messages.each do |message| %>
+      <% group_eval.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -57,8 +57,8 @@
   </div>
 
   <div class="field">
-    <%= form.label :proto_title_rating %>
-    <%= form.text_field :proto_title_rating %>
+    <%= form.label :proto_title %>
+    <%= form.text_field :proto_title %>
   </div>
 
   <div class="field">

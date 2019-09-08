@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Group Evals</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Year</th>
+      <th>Semester</th>
+      <th>School</th>
+      <th>Grade</th>
+      <th>Group</th>
+      <th>Evaluator user</th>
+      <th>Evaluator group user</th>
+      <th>Portf plan rating</th>
+      <th>Portf analysis rating</th>
+      <th>Proto title</th>
+      <th>Proto rating</th>
+      <th>Poster abstract rating</th>
+      <th>Poster intro abstr rating</th>
+      <th>Poster mat meth rating</th>
+      <th>Poster results rating</th>
+      <th>Poster discussion rating</th>
+      <th>Poster citation rating</th>
+      <th>Poster design rating</th>
+      <th>Poster summary comments</th>
+      <th>Invalid</th>
+      <th>Created at</th>
+      <th>Updated at</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @group_evals.each do |group_eval| %>
+      <tr>
+        <td><%= group_eval.year_id %></td>
+        <td><%= group_eval.semester %></td>
+        <td><%= group_eval.school_id %></td>
+        <td><%= group_eval.grade %></td>
+        <td><%= group_eval.group_id %></td>
+        <td><%= group_eval.evaluator_user_id %></td>
+        <td><%= group_eval.evaluator_group_user_id %></td>
+        <td><%= group_eval.portf_plan_rating %></td>
+        <td><%= group_eval.portf_analysis_rating %></td>
+        <td><%= group_eval.proto_title %></td>
+        <td><%= group_eval.proto_rating %></td>
+        <td><%= group_eval.poster_abstract_rating %></td>
+        <td><%= group_eval.poster_intro_abstr_rating %></td>
+        <td><%= group_eval.poster_mat_meth_rating %></td>
+        <td><%= group_eval.poster_results_rating %></td>
+        <td><%= group_eval.poster_discussion_rating %></td>
+        <td><%= group_eval.poster_citation_rating %></td>
+        <td><%= group_eval.poster_design_rating %></td>
+        <td><%= group_eval.poster_summary_comments %></td>
+        <td><%= group_eval.invalid %></td>
+        <td><%= group_eval.created_at %></td>
+        <td><%= group_eval.updated_at %></td>
+        <td><%= link_to 'Show', group_eval %></td>
+        <td><%= link_to 'Edit', edit_group_eval_path(group_eval) %></td>
+        <td><%= link_to 'Destroy', group_eval, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Group Eval', new_group_eval_path %>
