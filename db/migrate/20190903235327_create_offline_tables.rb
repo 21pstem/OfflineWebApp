@@ -25,7 +25,7 @@ class CreateOfflineTables < ActiveRecord::Migration[5.2]
       t.integer :evaluator_group_user_id, null: false, default: nil
       t.string :portf_plan_rating, null: true, default: nil
       t.string :portf_analysis_rating, null: true, default: nil
-      t.string :proto_title_rating, null: true, default: nil
+      t.string :proto_title, null: true, default: nil
       t.string :proto_rating, null: true, default: nil
       t.string :poster_abstract_rating, null: true, default: nil
       t.string :poster_intro_abstr_rating, null: true, default: nil
@@ -35,7 +35,7 @@ class CreateOfflineTables < ActiveRecord::Migration[5.2]
       t.string :poster_citation_rating, null: true, default: nil
       t.string :poster_design_rating, null: true, default: nil
       t.string :poster_summary_comments, null: true, default: nil
-      t.boolean :invalid, null: false, default: false
+      t.boolean :rejected, null: false, default: false
 
       t.timestamps
     end

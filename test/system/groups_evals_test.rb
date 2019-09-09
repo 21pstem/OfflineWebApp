@@ -19,7 +19,7 @@ class GroupsEvalsTest < ApplicationSystemTestCase
     fill_in "Evaluator user", with: @groups_eval.evaluator_user_id
     fill_in "Grade", with: @groups_eval.grade
     fill_in "Group", with: @groups_eval.group_id
-    check "Invalid" if @groups_eval.invalid
+    check "rejected" if @groups_eval.rejected
     fill_in "Portf analysis rating", with: @groups_eval.portf_analysis_rating
     fill_in "Portf plan rating", with: @groups_eval.portf_plan_rating
     fill_in "Poster abstract rating", with: @groups_eval.poster_abstract_rating
@@ -31,7 +31,7 @@ class GroupsEvalsTest < ApplicationSystemTestCase
     fill_in "Poster results rating", with: @groups_eval.poster_results_rating
     fill_in "Poster summary comments", with: @groups_eval.poster_summary_comments
     fill_in "Proto rating", with: @groups_eval.proto_rating
-    fill_in "Proto title rating", with: @groups_eval.proto_title_rating
+    fill_in "Proto title rating", with: @groups_eval.proto_title
     fill_in "School", with: @groups_eval.school_id
     fill_in "Semester", with: @groups_eval.semester
     fill_in "Updated at", with: @groups_eval.updated_at
@@ -51,7 +51,7 @@ class GroupsEvalsTest < ApplicationSystemTestCase
     fill_in "Evaluator user", with: @groups_eval.evaluator_user_id
     fill_in "Grade", with: @groups_eval.grade
     fill_in "Group", with: @groups_eval.group_id
-    check "Invalid" if @groups_eval.invalid
+    check "rejected" if @groups_eval.rejected
     fill_in "Portf analysis rating", with: @groups_eval.portf_analysis_rating
     fill_in "Portf plan rating", with: @groups_eval.portf_plan_rating
     fill_in "Poster abstract rating", with: @groups_eval.poster_abstract_rating
@@ -63,7 +63,7 @@ class GroupsEvalsTest < ApplicationSystemTestCase
     fill_in "Poster results rating", with: @groups_eval.poster_results_rating
     fill_in "Poster summary comments", with: @groups_eval.poster_summary_comments
     fill_in "Proto rating", with: @groups_eval.proto_rating
-    fill_in "Proto title rating", with: @groups_eval.proto_title_rating
+    fill_in "Proto title rating", with: @groups_eval.proto_title
     fill_in "School", with: @groups_eval.school_id
     fill_in "Semester", with: @groups_eval.semester
     fill_in "Updated at", with: @groups_eval.updated_at
