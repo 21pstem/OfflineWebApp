@@ -9,7 +9,7 @@ class CreateOfflineTables < ActiveRecord::Migration[5.2]
       t.string :grade, null: false, default: ''
       t.integer :group_id, null: false, default: nil
       t.integer :user_id, null: false, default: nil
-      t.string :user_roles, null: false, default: ''
+      t.string :user_role, null: false, default: ''
 
       t.timestamps
     end
@@ -36,6 +36,8 @@ class CreateOfflineTables < ActiveRecord::Migration[5.2]
       t.string :poster_design_rating, null: true, default: nil
       t.string :poster_summary_comments, null: true, default: nil
       t.boolean :rejected, null: false, default: false
+
+
 
       t.timestamps
     end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_05_234434) do
+ActiveRecord::Schema.define(version: 2019_09_10_142724) do
 
   create_table "groups_evals", force: :cascade do |t|
     t.integer "year_id", null: false
@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 2019_09_05_234434) do
     t.string "grade", default: "", null: false
     t.integer "group_id", null: false
     t.integer "user_id", null: false
-    t.string "user_roles", default: "", null: false
+    t.string "user_role", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "active", default: true, null: false

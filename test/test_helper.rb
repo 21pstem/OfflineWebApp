@@ -7,4 +7,8 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+  def parse_response(res)
+  	JSON.parse(res)
+  end
+
 end
