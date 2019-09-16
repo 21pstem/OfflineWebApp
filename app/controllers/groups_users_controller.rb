@@ -1,6 +1,6 @@
 class GroupsUsersController < ApplicationController
   GROUPS_USERS_PARAMS = [
-    :year_id, :semester, :school_id, :grade, :group_id, :user_id, :user_roles, :active
+    :user_id
   ]
 
   # GET '/groups_users/by_evaluator/:user_id'
@@ -11,9 +11,16 @@ class GroupsUsersController < ApplicationController
   	@user_groups_for_id = GroupsUser.where(user_id: params[:user_id], user_roles: 'evaluator')
     respond_to do |format|
       format.html { render :by_evaluator }
-      format.json { render json: @user_groups_for_id, status: :ok }
+      format.json { render json: { data: @user_groups_for_id, error: '' }, status: :ok }
     end
 
   end
+
+  private
+
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def groups_user_params
+      params.require(:groups_users).permit(GROUPS_USERS_PARAMS)
+    end
 
 end
