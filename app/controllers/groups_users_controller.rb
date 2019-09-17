@@ -11,7 +11,7 @@ class GroupsUsersController < ApplicationController
   	@user_groups_for_id = GroupsUser.where(user_id: params[:user_id], user_roles: 'evaluator')
     respond_to do |format|
       format.html { render :by_evaluator }
-      format.json { render json: { data: @user_groups_for_id, error: '' }, status: :ok }
+      format.json { render json: { data: @user_groups_for_id, errors: [] }, status: :ok }
     end
 
   end
