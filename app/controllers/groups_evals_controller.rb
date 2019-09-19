@@ -14,7 +14,7 @@ class GroupsEvalsController < ApplicationController
   def show
     puts ("@groups_eval: #{@groups_eval.inspect}")
     puts ("@errors: #{@errors.inspect}")
-    render json: { data: @groups_eval, errors: @errors}, status: :ok
+    render json: { data:  {groups_eval: @groups_eval}, errors: @errors}.to_json, status: :ok
   end
 
   # GET /groups_evals/new
@@ -22,7 +22,7 @@ class GroupsEvalsController < ApplicationController
   def new
     # the foreign key fields should be pre-populated
     @groups_eval = GroupsEval.new
-    render json: { data: @groups_eval, errors: @errors}, status: :ok
+    render json: { data:  {groups_eval: @groups_eval}, errors: @errors}.to_json, status: :ok
   end
 
   # GET /groups_evals/1/edit
@@ -30,7 +30,7 @@ class GroupsEvalsController < ApplicationController
   def edit
     puts ("@groups_eval: #{@groups_eval.inspect}")
     puts ("@errors: #{@errors.inspect}")
-    render json: { data: @groups_eval, errors: @errors }, status: :ok
+    render json: { data:  {groups_eval: @groups_eval}, errors: @errors }.to_json, status: :ok
   end
 
   # POST /groups_evals
@@ -41,10 +41,10 @@ class GroupsEvalsController < ApplicationController
     puts "@groups_eval: #{@groups_eval.inspect}"
 
     if @groups_eval.save
-      render json: { data: @groups_eval, errors: @errors }, status: :created
+      render json: { data:  {groups_eval: @groups_eval}, errors: @errors }.to_json, status: :created
     else
       @errors += @groups_eval.errors.full_messages
-      render json: { data: @groups_eval.errors, errors: @errors}, status: :ok
+      render json: { data: {groups_eval: @groups_eval.errors}, errors: @errors}.to_json, status: :ok
     end
   end
 
@@ -52,9 +52,9 @@ class GroupsEvalsController < ApplicationController
   # PATCH/PUT /groups_evals/1.json
   def update
     if @groups_eval.update(groups_eval_params)
-      render json: { data: @groups_eval, errors: @errors}, status: :ok
+      render json: { data: {groups_eval: @groups_eval}, errors: @errors}.to_json, status: :ok
     else
-      render json: { data: @groups_eval.errors, errors: @errors }, status: :unprocessable_entity
+      render json: { data: {groups_eval: @groups_eval.errors}, errors: @errors }.to_json, status: :unprocessable_entity
     end
   end
 
@@ -63,9 +63,9 @@ class GroupsEvalsController < ApplicationController
   # sets the active flag to false - deactivating this record
   def destroy
     if @groups_eval.update(active: false)
-      render json: { data: @groups_eval, errors: @errors }, status: :ok
+      render json: { data: {groups_eval: @groups_eval}, errors: @errors }.to_json, status: :ok
     else
-      render json: { data: @groups_eval.errors, errors: @errors }, status: :unprocessable_entity
+      render json: { data: {groups_eval: @groups_eval.errors}, errors: @errors }.to_json, status: :unprocessable_entity
     end
   end
 
