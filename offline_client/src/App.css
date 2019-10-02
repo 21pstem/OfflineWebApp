@@ -31,3 +31,61 @@
     transform: rotate(360deg);
   }
 }
+
+
+div.topbar {
+  background: lightblue;
+  height: 20px;
+  color: black;
+  width: 100%;
+  margin: 0;
+}
+
+div.assign-header {
+  width: 90%;
+  margin: auto;
+}
+
+div.assign-header>* {
+  margin: 0 5% 0;
+}
+
+div.assign-header>button {
+  background: white;
+  border: none;
+  max-width: 70px;
+  text-size: 100%;
+}
+
+div.assign-header>button>i {
+  font-size: 15px;
+  width:15px;
+}
+
+ul.assign-list {
+  list-style-type: none;
+  postion: relative;
+  margin: auto;
+  width: 90%;
+}
+
+ul.assign-list>li {
+  width: 90%;
+  padding: 20px;
+  margin: 0 auto 5px auto;
+  positon: relative;
+  display: inline-block;
+  border: 3px solid black;
+}
+
+span.assign-list__group-num {
+  vertical-align: center;
+  margin: 0 25px 0;
+}
+span.assign-list__eval-status {
+  margin: 0 25px 0;
+}
+
+.pull-left {
+  float: left;
+}
